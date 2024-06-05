@@ -73,7 +73,7 @@ public class EmployeesDAO {
         }
     }
 
-    public ArrayList<Employees> selectAlljobs(EmployeesFilterDTO filter) throws SQLException, ClassNotFoundException {
+    public ArrayList<Employees> selectAllEmps(EmployeesFilterDTO filter) throws SQLException, ClassNotFoundException {
         Class.forName("org.sqlite.JDBC");
         Connection conn = DriverManager.getConnection(URL);
         PreparedStatement st;

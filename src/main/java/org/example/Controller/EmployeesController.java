@@ -4,7 +4,10 @@ package org.example.Controller;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.example.DAO.EmployeesDAO;
+import org.example.FilterDTO.EmployeesFilterDTO;
 import org.example.Model.Employees;
+
+import java.util.ArrayList;
 
 @Path("/employees")
 public class EmployeesController {
@@ -13,10 +16,10 @@ public class EmployeesController {
 
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Employees selectAllEmployees(@BeanParam int filter){
+    public ArrayList<Employees> selectAllEmployees(@BeanParam EmployeesFilterDTO filter){
         try {
 
-            return dao.selectEmployees(filter);
+            return dao.selectAllEmps(filter);
         }catch (Exception e){
             throw new RuntimeException(e);
         }
