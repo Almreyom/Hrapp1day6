@@ -6,6 +6,7 @@ import org.example.Model.Employees;
 import java.sql.*;
 import java.util.ArrayList;
 
+
 public class EmployeesDAO {
     private static final String URL =  "jdbc:sqlite:C:\\Users\\dev\\IdeaProjects\\Hrapp1day6\\hr.db";
     private static final String SELECT_ALL_EMPLOYEES = "select * from employees";

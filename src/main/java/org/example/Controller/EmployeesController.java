@@ -4,7 +4,6 @@ package org.example.Controller;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.example.DAO.EmployeesDAO;
-import org.example.FilterDTO.EmployeesFilterDTO;
 import org.example.Model.Employees;
 
 @Path("/employees")
@@ -14,7 +13,7 @@ public class EmployeesController {
 
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Employees selectAllEmployees(@BeanParam EmployeesFilterDTO filter){
+    public Employees selectAllEmployees(@BeanParam int filter){
         try {
 
             return dao.selectEmployees(filter);
@@ -43,6 +42,7 @@ public class EmployeesController {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
     }
 
     @POST
