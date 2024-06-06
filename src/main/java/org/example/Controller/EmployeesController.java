@@ -3,10 +3,13 @@ package org.example.Controller;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.UriInfo;
 import org.example.DAO.EmployeesDAO;
+import org.example.FilterDTO.EMPSDDTO;
 import org.example.FilterDTO.EmployeesFilterDTO;
 import org.example.Model.Employees;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 @Path("/employees")
@@ -47,7 +50,6 @@ public class EmployeesController {
         }
 
     }
-
     @POST
     public void insertEmployees(Employees employees) {
 
